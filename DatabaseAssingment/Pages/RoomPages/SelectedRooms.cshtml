@@ -1,0 +1,55 @@
+﻿@page
+@model DatabaseAssingment.Pages.RoomPages.SelectedRoomsModel
+@{
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>  Place Number   </th>
+            <th>  Rent   </th>
+            <th>  Occupied </th>
+            <th>  Room Number</th>
+            <th>  Dormitory Number </th>
+            <th>  Apartment Number </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Rooms)
+        {
+        <tr>
+            <td>
+                @item.Place_No
+            </td>
+            <td>
+                @item.Rent_Per_Semester
+            </td>
+            <td>
+                @item.Occupied
+            </td>
+            <td>
+                @item.Room_No
+            </td>
+            <td>
+                @if (item.Dormitory_No == 0)
+                {
+                    <p>-</p>
+                }
+                else @item.Dormitory_No
+            </td>
+            <td>
+                @if (item.Apartment_No == 0)
+                {
+                    <p>-</p>
+                }
+                else @item.Apartment_No
+            </td>
+            <td>
+                <form method="post">
+                    <input type="submit" value="Assign" asp-route-id="@item.Place_No" class="btn-dark" />
+                </form>
+            </td>
+        </tr> 
+        }
+    </tbody>
+</table>

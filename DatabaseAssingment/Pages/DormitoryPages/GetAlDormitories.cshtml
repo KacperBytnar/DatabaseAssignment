@@ -1,0 +1,29 @@
+﻿@page
+@model DatabaseAssingment.Pages.DormitoryPages.GetAlDormitoriesModel
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>  Dormitory Number   </th>
+            <th>    Name  </th>
+            <th>  Address </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Dormitories)
+        {
+            <tr>
+                <td>
+                    @item.Dormitory_No
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    <a asp-page="/RoomPages/SelectedRooms" asp-route-id="@item.Dormitory_No" asp-route-type="dorm" class="nav-link">@item.Address</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

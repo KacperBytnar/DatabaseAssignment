@@ -1,0 +1,37 @@
+﻿@page
+@model DatabaseAssingment.Pages.RentPages.GetAllRentsModel
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>  Leasing Number   </th>
+            <th>    Student Number  </th>
+            <th>  Place Number </th>
+            <th>  Leasing From </th>
+            <th>  Leasing To </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Leasings)
+        {
+        <tr>
+            <td>
+                @item.Leasing_No
+            </td>
+            <td>
+                @item.Student_No
+            </td>
+            <td>
+                @item.Place_No
+            </td>
+            <td>
+                @item.DateFrom
+            </td>
+            <td>
+                @item.DateTo
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

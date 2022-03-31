@@ -1,0 +1,70 @@
+﻿@page
+@model DatabaseAssingment.Pages.RentPages.StudentLeasingsModel
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>  Leasing Number   </th>
+            <th>    Student Number  </th>
+            <th>  Place Number </th>
+            <th>  Leasing From </th>
+            <th>  Leasing To </th>
+            <th>  Rent </th>
+            <th>  Room_No </th>
+            <th>  Dorm Address </th>
+            <th>  Name </th>
+            <th>  Apartment Address </th>
+            <th>  Type </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach (var item in Model.leasings)
+            {
+                <td>
+                    @item.Leasing_No
+                </td>
+                <td>
+                    @item.Student_No
+                </td>
+                <td>
+                    @item.Place_No
+                </td>
+                <td>
+                    @item.DateFrom
+                </td>
+                <td>
+                    @item.DateTo
+                </td>
+            }
+            @foreach (var item in Model.rooms)
+            {
+                <td>
+                    @item.Rent_Per_Semester
+                </td>
+                <td>
+                    @item.Room_No
+                </td>
+            }
+            @foreach (var item in Model.dormitories)
+            {
+                <td>
+                    @item.Address
+                </td>
+                <td>
+                    @item.Name
+                </td>
+            }
+            @foreach (var item in Model.apartments)
+            {
+                <td>
+                    @item.Address
+                </td>
+                <td>
+                    @item.Types
+                </td>
+            }
+        </tr>
+    </tbody>
+</table>
